@@ -1,0 +1,14 @@
+// ... existing schema
+
+model LeavePolicy {
+  id            String   @id @default(cuid())
+  leaveType     String
+  daysPerYear   Int
+  accrualRate   String
+  carryOver     Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+// ... rest of the schema
+

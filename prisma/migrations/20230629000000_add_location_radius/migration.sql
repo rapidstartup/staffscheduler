@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "Location" ADD COLUMN "radius" DOUBLE PRECISION NOT NULL DEFAULT 50;
+
+-- AddForeignKey
+ALTER TABLE "TimeEntry" ADD COLUMN "locationId" TEXT NOT NULL;
+ALTER TABLE "TimeEntry" ADD CONSTRAINT "TimeEntry_locationId_fkey" FOREIGN KEY ("locationId") REFERENCES "Location"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
